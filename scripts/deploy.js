@@ -2,8 +2,8 @@ const hre = require("hardhat");
 
 async function main() {
   const [owner] = await hre.ethers.getSigners();
-  const RoboPunksNFT = await hre.ethers.getContractFactory("RoboPunksNFT");
-  const contract = await RoboPunksNFT.deploy();
+  const Message = await hre.ethers.getContractFactory("Message");
+  const contract = await Message.deploy();
   await contract.deployed();
   console.log(
     "Owner address: ",
