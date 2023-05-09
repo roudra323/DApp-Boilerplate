@@ -1,16 +1,5 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import App from "./App.jsx";
-// import "decentraland-ui/lib/styles.css";
-
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
 import "./polyfills";
-// import './global.css';
+import "./global.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
@@ -38,11 +27,9 @@ const wagmiClient = createClient({
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
-        <App />
-      </RainbowKitProvider>
-    </WagmiConfig>
-  </React.StrictMode>
+  <WagmiConfig client={wagmiClient}>
+    <RainbowKitProvider modalSize="compact" chains={chains}>
+      <App />
+    </RainbowKitProvider>
+  </WagmiConfig>
 );
