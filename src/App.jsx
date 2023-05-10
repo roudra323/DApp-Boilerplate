@@ -15,7 +15,7 @@ function App() {
   const { address, isConnected, isDisconnected } = useAccount();
 
   const contractInstance = async () => {
-    const contractAddress = "0x536cd2A9AC896D68256ae58AEd405d5689c36c3F";
+    const contractAddress = "<deployed contract addess>";
     const contractABI = abi.abi;
 
     try {
@@ -48,7 +48,7 @@ function App() {
   const handleShowMessageClick = async () => {
     if (state.contract) {
       const message = await state.contract.readMsg(
-        "0xCb62E7568819fd5C67A4A44cC485388a2969E42C"
+        "<address to show msg>"
       );
       console.log("Message:", message);
     }
