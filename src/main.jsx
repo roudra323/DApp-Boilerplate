@@ -16,7 +16,7 @@ const { chains, provider } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: "DappBoilerPlate",
-  projectId: "31308eb244f6bc63240801613d341bef",
+  projectId: "<project id from >", //project id from rainbowkit
   chains,
 });
 
