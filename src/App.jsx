@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import "./App.css";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Button } from "decentraland-ui";
+
 
 function App() {
   const [state, setState] = useState({
@@ -45,13 +45,6 @@ function App() {
     }
   }, [isConnected]);
 
-  const handleShowMessageClick = async () => {
-    if (state.contract) {
-      const message = await state.contract.readMsg(
-        "<address to show msg>"
-      );
-      console.log("Message:", message);
-    }
   };
 
   return (
@@ -64,9 +57,6 @@ function App() {
     >
       <ConnectButton onPress={contractInstance} />
       {console.log("state", state)}
-      <div className="show-msg">
-        <Button onClick={handleShowMessageClick}>Show Message</Button>
-      </div>
     </div>
   );
 }
